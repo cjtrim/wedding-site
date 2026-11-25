@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bill & Carl are getting married</title>
+<meta name="description" content="Join us March 24, 2028 in Cancun, Mexico. Details coming soon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;1,6..96,400&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EEF2F3;
+  --pine:#415d65;       /* slate teal */
+  --plum:#5c3b41;       /* deep wine accent */
+  --blush:#E4D8DA;
+  --mist:#C8D3D6;
+  --display:"Bodoni Moda","Didot",Georgia,serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--pine);font:400 1.0625rem/1.65 var(--body)}
+a{color:var(--plum)}
+:focus-visible{outline:3px solid var(--plum);outline-offset:3px;border-radius:2px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+
+/* nav */
+nav{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--mist)}
+nav .wrap{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;padding-top:.8rem;padding-bottom:.8rem}
+nav a{color:var(--pine);text-decoration:none;font-weight:500;font-size:.95rem}
+nav a:hover{color:var(--plum);text-decoration:underline;text-underline-offset:4px}
+
+/* hero: the memorable thing */
+.hero{background:var(--pine);color:var(--paper);min-height:100vh;display:flex;flex-direction:column;text-align:center}
+.hero-main{flex:1;display:grid;place-items:center;padding:4rem 1.5rem 3rem}
+.hero-band{background:var(--plum);color:var(--paper);padding:2.2rem 1.5rem 2.6rem}
+.hero-band .when{margin-top:0}
+.hero-band .soon{margin-top:1.6rem}
+.names{font-family:var(--display);font-weight:400;line-height:.9;letter-spacing:-.02em;font-size:clamp(3.5rem,13vw,9.5rem)}
+.names .amp{display:block;font-style:italic;color:var(--blush);font-size:.55em;margin:.1em 0}
+.when{margin-top:2.2rem;font-size:1.2rem}
+.count{margin-top:1.2rem;display:inline-flex;gap:1.6rem;font-family:var(--display);font-style:italic;font-size:1.35rem;color:var(--blush)}
+.count span b{font-style:normal;font-weight:600;font-size:2rem;display:block;line-height:1;text-align:center}
+.count span{text-align:center}
+.soon{margin-top:2.4rem;font-family:var(--display);font-style:italic;font-size:1.25rem;color:var(--blush)}
+.hero-cta{display:inline-block;margin-top:2.4rem;background:var(--pine);color:var(--paper);padding:.85rem 2rem;border-radius:999px;text-decoration:none;font-weight:600}
+.hero-cta:hover{background:var(--plum)}
+.hero .names,.hero .when{animation:rise 1.1s ease both}
+.hero .when{animation-delay:.25s}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* sections */
+section{padding:5rem 0}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(2rem,5vw,3.2rem);line-height:1.1;margin-bottom:1.6rem}
+h3{font-family:var(--display);font-weight:600;font-size:1.4rem;margin-bottom:.4rem}
+.story p{max-width:38rem;font-size:1.15rem}
+.story p+p{margin-top:1rem}
+
+.band{background:var(--pine);color:var(--paper)}
+.band h2{color:var(--paper)}
+.band a{color:var(--blush)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:3rem}
+.two p+p{margin-top:.5rem}
+
+/* schedule: a true sequence, so it gets a timeline */
+.timeline{list-style:none;padding:0;border-left:2px solid var(--plum);margin-left:.4rem}
+.timeline li{padding:0 0 1.6rem 1.6rem;position:relative}
+.timeline li::before{content:"";position:absolute;left:-.43rem;top:.55rem;width:.75rem;height:.75rem;border-radius:50%;background:var(--plum)}
+.timeline time{font-family:var(--display);font-style:italic;font-size:1.2rem;color:var(--plum);display:block}
+
+.panel{background:var(--blush);border-radius:6px;padding:2rem}
+details{border-bottom:1px solid var(--mist);padding:1rem 0}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--plum);font-size:1.4rem;line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{margin-top:.6rem;max-width:40rem}
+
+form{display:grid;gap:1rem;max-width:32rem}
+label{font-weight:600;font-size:.95rem;display:grid;gap:.3rem}
+input,select,textarea{font:inherit;color:var(--pine);background:var(--paper);border:1px solid var(--pine);border-radius:4px;padding:.7rem .8rem;width:100%}
+button{font:inherit;font-weight:600;background:var(--plum);color:#fff;border:0;border-radius:999px;padding:.85rem 2rem;cursor:pointer;justify-self:start}
+button:hover{background:var(--pine)}
+.note{font-size:.9rem;opacity:.8}
+footer{text-align:center;padding:3rem 1.5rem;font-family:var(--display);font-style:italic;font-size:1.3rem}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero .names,.hero .when{animation:none}}
+</style>
+</head>
+<body>
+
+<!-- Coming later: navigation
+<nav aria-label="Main">
+  <div class="wrap">
+    <a href="#story">Our story</a>
+    <a href="#details">Details</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#travel">Travel</a>
+    <a href="#rsvp">RSVP</a>
+    <a href="#faq">FAQ</a>
+  </div>
+</nav>
+-->
+
+<header class="hero">
+  <div class="hero-main">
+    <h1 class="names">Bill<span class="amp">&amp;</span>Carl</h1>
+  </div>
+  <div class="hero-band">
+    <p class="when">Friday, March 24, 2028 &middot; Cancun, Mexico</p>
+    <div class="count" id="count" aria-live="off">
+      <span><b id="d">0</b>days</span><span><b id="h">0</b>hours</span><span><b id="m">0</b>minutes</span>
+    </div>
+    <p class="soon">Details and RSVP coming soon</p>
+  </div>
+</header>
+
+<!-- Coming later: page sections (story, details, schedule, travel, RSVP, FAQ).
+     For the RSVP form, replace YOUR_FORM_ID with a free Formspree (or similar) endpoint.
+<section id="story">
+  <div class="wrap story">
+    <h2>Our story</h2>
+    <p>We met on a rainy Tuesday at a bookshop neither of us meant to walk into. Three years, one very opinionated cat, and a lot of shared playlists later, we are getting married.</p>
+    <p>We would love for you to be there. Everyone on this page has been part of the story, and we can&rsquo;t imagine the day without you.</p>
+  </div>
+</section>
+
+<section id="details" class="band">
+  <div class="wrap">
+    <h2>Details</h2>
+    <div class="two">
+      <div>
+        <h3>Ceremony</h3>
+        <p>4:00 PM<br>Seaside Chapel<br>123 Beach Avenue, Cancun, Mexico</p>
+      </div>
+      <div>
+        <h3>Reception</h3>
+        <p>5:30 PM<br>The Lighthouse Pavilion<br>45 Harbor Road, Cancun, Mexico</p>
+        <p>Dinner, dancing, and cake until 11:00 PM.</p>
+      </div>
+      <div>
+        <h3>Dress</h3>
+        <p>Garden formal. Think linen, soft colors, and shoes you can walk on grass in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="schedule">
+  <div class="wrap">
+    <h2>The day, in order</h2>
+    <ol class="timeline">
+      <li><time>3:30 PM</time>Guests arrive and find a seat</li>
+      <li><time>4:00 PM</time>Ceremony</li>
+      <li><time>4:45 PM</time>Cocktail hour on the lawn</li>
+      <li><time>5:30 PM</time>Dinner and toasts</li>
+      <li><time>7:30 PM</time>First dance, then everyone</li>
+      <li><time>11:00 PM</time>Sparkler send-off</li>
+    </ol>
+  </div>
+</section>
+
+<section id="travel" class="band">
+  <div class="wrap">
+    <h2>Getting there and staying close</h2>
+    <div class="two">
+      <div>
+        <h3>Where to stay</h3>
+        <p>We&rsquo;ve reserved a room block at <a href="https://example.com">The Harbor Inn</a> (mention our names when booking). The rate is held until May 1.</p>
+      </div>
+      <div>
+        <h3>Getting here</h3>
+        <p>Closest airport is Atlantic City (ACY), about 45 minutes away. Philadelphia (PHL) is about 90 minutes by car. Parking is free at both venues.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="rsvp">
+  <div class="wrap two">
+    <div>
+      <h2>RSVP</h2>
+      <p>Please reply by April 1, 2027.</p>
+      <p class="note" style="margin-top:1rem">Registry: <a href="https://example.com">view our registry</a>. Your presence is the real gift, but if you&rsquo;d like to give something, that&rsquo;s where we&rsquo;ve listed it.</p>
+    </div>
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <label>Full name <input name="name" required autocomplete="name"></label>
+      <label>Email <input type="email" name="email" required autocomplete="email"></label>
+      <label>Will you attend?
+        <select name="attending" required>
+          <option value="">Choose one</option>
+          <option>Yes, I&rsquo;ll be there</option>
+          <option>No, I can&rsquo;t make it</option>
+        </select>
+      </label>
+      <label>Number of guests in your party <input type="number" name="guests" min="1" max="6" value="1"></label>
+      <label>Dietary needs or a note for us <textarea name="note" rows="3"></textarea></label>
+      <button type="submit">Send RSVP</button>
+    </form>
+  </div>
+</section>
+
+<section id="faq" class="panel" style="border-radius:0">
+  <div class="wrap">
+    <h2>Questions</h2>
+    <details><summary>Can I bring a guest?</summary><p>Your invitation lists who is included. If you&rsquo;re unsure, email us and we&rsquo;ll sort it out.</p></details>
+    <details><summary>Are children welcome?</summary><p>We love your little ones, but the evening is adults-only. We hope you can enjoy a night off.</p></details>
+    <details><summary>Is the ceremony outdoors?</summary><p>Yes, with an indoor backup if it rains. We&rsquo;ll post any change here and by email the morning of.</p></details>
+    <details><summary>Who do I contact with questions?</summary><p>Email us at <a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a>.</p></details>
+  </div>
+</section>
+
+<footer>With love, Bill &amp; Carl</footer>
+-->
+
+<script>
+(function(){
+  var target = new Date("2028-03-24T00:00:00-05:00").getTime(); // Cancun time; adjust once the ceremony time is set
+  function tick(){
+    var diff = Math.max(0, target - Date.now());
+    document.getElementById("d").textContent = Math.floor(diff/864e5);
+    document.getElementById("h").textContent = Math.floor(diff%864e5/36e5);
+    document.getElementById("m").textContent = Math.floor(diff%36e5/6e4);
+  }
+  tick(); setInterval(tick, 30000);
+})();
+</script>
+</body>
+</html>
